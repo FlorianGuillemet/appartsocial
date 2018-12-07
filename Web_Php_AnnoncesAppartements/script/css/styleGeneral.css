@@ -1,0 +1,105 @@
+footer { 
+    position: absolute; /* On absolute a toi de voir */
+    bottom: 0px;
+    height: 215px;    /**hauteur de ton image */
+    width : 100%;    /** Largeur de ton image */
+    background-image: url("https://www.fastt.org/sites/default/files/action-logement_1.png") no-repeat center center; 
+ 
+}
+
+
+.imageCaroussel{
+    height: 268.33px;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+th{
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.thBorderLR{
+    border-left-style: solid;
+    border-right-style: solid;
+}
+
+.thBorderLeft{
+    border-left-style: solid;
+}
+
+.thBorderRight{
+    border-right-style: solid;
+}
+
+
+.thBorderBHidden{
+    border-bottom: 0px hidden !important;
+}
+
+.fontNormal{
+    font-weight: normal !important;
+    font-style: italic !important;
+}
+
+.fontBold{
+	font-weight: bold !important;
+}
+
+td{
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+#txtAreaMessage{
+    width: 100% !important;
+}
+
+#pCardText{  
+  display: block; /* or inline-block */
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 3.9em;
+  line-height: 1.3em;
+  text-align:justify;
+  margin-bottom: 0rem;
+}
+
+#corps-texte-body{
+	margin: 1em 2em;
+
+}
+
+/*
+.text {
+  position: relative;
+  font-size: 14px;
+  color: black;
+  width: 100%; /* Could be anything you like. 
+}
+*/
+/*
+.text-concat {
+  position: relative;
+  display: inline-block;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 3.6em; /* (Number of lines you want visible) * (line-height) 
+  line-height: 1.2em;
+  text-align:justify;
+}
+*/
+/*
+.text.ellipsis::after {
+  content: "...";
+  position: absolute;
+  right: -12px; 
+  bottom: 4px;
+}
+*/
