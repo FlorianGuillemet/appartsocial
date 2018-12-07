@@ -1,5 +1,5 @@
 <?php 
 
-header("Location:  http://" . $_SERVER['SERVER_NAME']."./controleur/cConnection.php");
+header("Location:  http://" . $_SERVER['SERVER_NAME']."./controleur/cPageAccueil.php");
 
 ?>

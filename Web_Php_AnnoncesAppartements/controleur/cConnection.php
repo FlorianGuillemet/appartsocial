@@ -62,5 +62,5 @@ if (isset($_GET['deconnection']) AND $_GET['deconnection'] == "ok") {
     
     session_destroy();
     
-    header("Location:  http://" . $_SERVER['SERVER_NAME']."./controleur/cConnection.php");
+    header("Location:  http://" . $_SERVER['SERVER_NAME']."./controleur/cPageAccueil.php");
 }

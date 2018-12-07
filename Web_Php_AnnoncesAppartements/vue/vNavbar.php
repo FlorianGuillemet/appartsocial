@@ -15,39 +15,51 @@
                 <li class="nav-item">
                 	<a class="nav-link" href="../controleur/cConsulterAnnonces.php">Logements en vente</a>
                 </li>
-                <?php if ( $_SESSION['role'] == 'admin') 
+                <?php if (isset($_SESSION['role']) AND $_SESSION['role'] == 'admin') 
                     echo "<li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"../controleur/cAjouterAnnonce.php\">Ajouter une annonce</a>
                           </li>"; ?>
-                <?php if ( $_SESSION['role'] == 'admin') 
+                <?php if (isset($_SESSION['role']) AND $_SESSION['role'] == 'admin') 
                     echo "<li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"../controleur/cModifierAnnonce.php\">Modifier une annonce</a>
                           </li>"; ?>
-                <?php if ( $_SESSION['role'] == 'admin') 
+                <?php if (isset($_SESSION['role']) AND $_SESSION['role'] == 'admin') 
                     echo "<li class=\"nav-item\">
                             <a class=\"nav-link\" href=\"../controleur/cSupprAnnonce.php\">Supprimer une annonce</a>
                           </li>"; ?>
-            </ul>
-             
-        	<ul class="navbar-nav mr-right mx-3">          
-        		<div class="nav-item dropdown">
-            	    <button class="btn btn-outline-info dropdown-toggle" type="button" id="menu" data-toggle="dropdown"><span class="fas fa-user-circle mr-2"></span><?php echo $_SESSION['prenomUtilisateur']." ".$_SESSION['nomUtilisateur'] ?> 
-                	    <span class="caret"></span>
+            </ul>           
+            
+            <?php if(isset($_SESSION['idUtilisateur'])) { 
+        	echo "<ul class=\"navbar-nav mr-right mx-3\">          
+        		<div class=\"nav-item dropdown\">
+            	    <button class=\"btn btn-outline-info dropdown-toggle\" type=\"button\" id=\"menu\" data-toggle=\"dropdown\"><span class=\"fas fa-user-circle mr-2\"></span>".$_SESSION['prenomUtilisateur']." ".$_SESSION['nomUtilisateur'].  
+                	    "<span class=\"caret\"></span>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="menu">
-                    <?php if ( $_SESSION['role'] == 'client') 
+                    <ul class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"menu\">";
+        	           if ( $_SESSION['role'] == 'client') {
                         echo   "<li><a class=\"dropdown-item\" href=\"../controleur/cEspacePersonnel.php\">Mon espace personnel<span class=\"fas fa-chalkboard-teacher ml-3\"></span></a></li>
                                 <li><a class=\"dropdown-item\" href=\"#\">Mes informations personnelles<span class=\"fas fa-address-book ml-3\"></span></a></li>
-                            <li class=\"dropdown-divider\"></li>"?>
-                    <?php if ( $_SESSION['role'] == 'admin') 
+                            <li class=\"dropdown-divider\"></li>
+                            <li><a class=\"dropdown-item\" href=\"../controleur/cConnection.php?deconnection=ok\">Se d&eacute;connecter<span class=\"fas fa-lock ml-3\"></span></a></li>";
+        	           }
+        	           if ( $_SESSION['role'] == 'admin') {
                         echo   "<li><a class=\"dropdown-item\" href=\"../controleur/cGestionDemandes.php\">Gestion des demandes locataires<span class=\"fas fa-book-reader ml-3\"></span></a></li>
-                            <li class=\"dropdown-divider\"></li>"?>
-                    	<li><a class="dropdown-item" href="../controleur/cConnection.php?deconnection=ok">Se d&eacute;connecter<span class="fas fa-lock ml-3"></span></a></li>
-                    </ul>
+                            <li class=\"dropdown-divider\"></li>
+                            <li><a class=\"dropdown-item\" href=\"../controleur/cConnection.php?deconnection=ok\">Se d&eacute;connecter<span class=\"fas fa-lock ml-3\"></span></a></li>";
+                        }
+                    	
+                    echo "</ul>
               	    	</div>      	
                     
-        	</ul>
+        	</ul>";
+            }
+            else{
+                echo "<div class=\"navbar-nav mr-right mx-3\">
+                <a class=\"btn btn-outline-info\" role=\"button\" href=\"../controleur/cConnection.php\"><span class=\"fas fa-user-circle mr-2\"></span>Se connecter</a>
+                </div>";
+            } ?>               
              
         </div>
     </nav>
 </div>
+
